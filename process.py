@@ -18,15 +18,15 @@ edge_pool = None
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--input_dir", required=True, help="path to folder containing images")
-parser.add_argument("--output_dir", required=True, help="output path")
-parser.add_argument("--operation", required=True, choices=["grayscale", "resize", "blank", "combine", "edges", "blur"])
+parser.add_argument("--input_dir",  help="path to folder containing images",default='E:\download\COCO\\train2014\\train2014Resize')
+parser.add_argument("--output_dir",  help="output path",default='E:\download\COCO\\train2014\\train2014Combined')
+parser.add_argument("--operation", choices=["grayscale", "resize", "blank", "combine", "edges", "blur"],default='combine')
 parser.add_argument("--workers", type=int, default=1, help="number of workers")
 # resize
 parser.add_argument("--pad", action="store_true", help="pad instead of crop for resize operation")
 parser.add_argument("--size", type=int, default=256, help="size to use for resize operation")
 # combine
-parser.add_argument("--b_dir", type=str, help="path to folder containing B images for combine operation")
+parser.add_argument("--b_dir", type=str, help="path to folder containing B images for combine operation",default='E:\download\COCO\\train2014\\train2014Blur')
 a = parser.parse_args()
 
 
